@@ -20,8 +20,8 @@ class CreateContactsTable extends Migration
             $table->string('correo')->unique();
             $table->string('telefono');
 
-            $table->unsignedBigInteger('cliente_id');
-            $table->foreign('cliente_id')->references('id')->on('clientes')->onDelete('cascade');
+            $table->unsignedBigInteger('client_id');
+            $table->foreign('client_id')->references('id')->on('clients')->onDelete('cascade');
 
             $table->timestamps();
         });

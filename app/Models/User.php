@@ -62,4 +62,14 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+    //RELACION UNO A MUCHOS
+    public function works_published(){
+        return $this->hasMany(Work::class);
+    }
+
+    //RELACION MUCHOS A MUCHOS
+    public function works_postulate(){
+        return $this->belongsToMany(Work::class);
+    }
 }

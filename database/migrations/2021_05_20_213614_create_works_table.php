@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Work;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -20,7 +21,7 @@ class CreateWorksTable extends Migration
             $table->unsignedBigInteger('type_id');
             $table->string('titulo');
             $table->text('descripcion');
-            $table->enum('estado', [Trabajo::PUBLICADO, Trabajo::TERMINADO])->default(Trabajo::PUBLICADO);
+            $table->enum('estado', [Work::PUBLICADO, Work::TERMINADO])->default(Work::PUBLICADO);
             $table->string('slug');
             $table->date('inicio');
             $table->date('fin');

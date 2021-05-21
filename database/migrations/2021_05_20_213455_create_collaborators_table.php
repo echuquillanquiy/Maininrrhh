@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Collaborator;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -20,7 +21,7 @@ class CreateCollaboratorsTable extends Migration
             $table->unsignedBigInteger('departament_id')->nullable();
             $table->unsignedBigInteger('province_id')->nullable();
             $table->unsignedBigInteger('district_id')->nullable();
-            $table->unsignedBigInteger('ubigeo_id')->nullable();
+            $table->unsignedBigInteger('ubigee_id')->nullable();
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('departament_id')->references('id')->on('departaments')->onDelete('cascade');
@@ -28,10 +29,10 @@ class CreateCollaboratorsTable extends Migration
             $table->foreign('district_id')->references('id')->on('districts')->onDelete('cascade');
             $table->foreign('ubigee_id')->references('id')->on('ubigees')->onDelete('cascade');
 
-            $table->string('nombres');
-            $table->string('apellidos');
             $table->string('documento', 25);
             $table->string('ndocumento', 20)->unique();
+            $table->string('nombres');
+            $table->string('apellidos');
             $table->date('fechanac');
             $table->string('instruccion', 50);
             $table->string('telefono', 50);
@@ -46,7 +47,7 @@ class CreateCollaboratorsTable extends Migration
             $table->string('tiempocasa',50);
             $table->string('banco', 50);
             $table->string('cuentabancaria', 20);
-            $table->enum('estado', [Colaborador::ACEPTADO, Colaborador::RECHAZADO])->default(Colaborador::ACEPTADO);
+            $table->enum('estado', [Collaborator::ACEPTADO, Collaborator::RECHAZADO])->default(Collaborator::ACEPTADO);
 
             $table->timestamps();
         });

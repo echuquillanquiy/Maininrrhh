@@ -7,5 +7,17 @@ use Illuminate\Database\Eloquent\Model;
 
 class Medical extends Model
 {
+    protected $guarded = ['id'];
     use HasFactory;
+
+    //RELACION UNO A UNO
+    public function collaborator(){
+        return $this->hasOne(Collaborator::class);
+    }
+
+    //RELACION UNO A MUCHOS INVERSA
+
+    public function client(){
+        return $this->belongsTo(Client::class);
+    }
 }

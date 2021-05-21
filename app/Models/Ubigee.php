@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Ubigee extends Model
 {
     use HasFactory;
+
+    public function collaborators(){
+        return $this->hasMany(Collaborator::class);
+    }
 }

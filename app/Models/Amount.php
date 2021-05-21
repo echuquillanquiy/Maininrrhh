@@ -7,5 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Amount extends Model
 {
+    protected $guarded = ['id'];
     use HasFactory;
+
+    public function datogenerals(){
+        return $this->hasMany(DatoGeneral::class);
+    }
 }
