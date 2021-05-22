@@ -23,7 +23,7 @@ class CreateMedicalsTable extends Migration
 
             $table->integer('peso');
             $table->integer('talla');
-            $table->decimal('imc', 5,2)->nullable();
+            $table->integer('imc')->nullable();
             $table->string('diagnutricion')->nullable();
             $table->string('fechaexmedico')->nullable();
             $table->string('levantamientoobs')->nullable();

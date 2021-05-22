@@ -29,10 +29,10 @@ class CreateCollaboratorsTable extends Migration
             $table->foreign('district_id')->references('id')->on('districts')->onDelete('cascade');
             $table->foreign('ubigee_id')->references('id')->on('ubigees')->onDelete('cascade');
 
-            $table->string('documento', 25);
-            $table->string('ndocumento', 20)->unique();
             $table->string('nombres');
             $table->string('apellidos');
+            $table->string('documento', 25);
+            $table->string('ndocumento', 20)->unique();
             $table->date('fechanac');
             $table->string('instruccion', 50);
             $table->string('telefono', 50);
@@ -43,7 +43,7 @@ class CreateCollaboratorsTable extends Migration
             $table->string('sanguineo',3);
             $table->string('hijos',4);
             $table->string('contacto',50);
-            $table->string('telemeergencia',9);
+            $table->string('telemeergencia');
             $table->string('tiempocasa',50);
             $table->string('banco', 50);
             $table->string('cuentabancaria', 20);

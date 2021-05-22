@@ -9,7 +9,13 @@ class Departament extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['name'];
+
     public function collaborators(){
         return $this->hasMany(Collaborator::class);
+    }
+
+    public function provinces(){
+        return $this->hasMany(Province::class);
     }
 }

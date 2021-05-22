@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class District extends Model
 {
     use HasFactory;
+    protected $fillable = ['name', 'departament_id', 'province_id'];
 
     public function collaborators(){
         return $this->hasMany(Collaborator::class);
