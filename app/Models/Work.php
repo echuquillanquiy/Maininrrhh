@@ -18,10 +18,9 @@ class Work extends Model
         return $this->belongsTo(User::class, 'user_id');
     }
 
-    public function category(){
+    public function type(){
         return $this->belongsTo(Type::class);
     }
-
 
     //RELACION UNO A MUCHOS
 
@@ -32,13 +31,6 @@ class Work extends Model
     //RELACION MUCHOS A MUCHOS
     public function applicants(){
         return $this->belongsToMany(User::class);
-    }
-
-    //RELACION UNO A UNO POLIMORFICA
-
-    public function image()
-    {
-        return $this->morphOne('App\Models\Image', 'imageable');
     }
 
 }

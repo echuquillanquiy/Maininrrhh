@@ -18,7 +18,12 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         Storage::deleteDirectory('colaboradores');
+        Storage::deleteDirectory('works');
+        Storage::deleteDirectory('services');
+
         Storage::makeDirectory('colaboradores');
+        Storage::makeDirectory('works');
+        Storage::makeDirectory('services');
 
         $this->call(UserSeeder::class);
         $this->call(CategorySeeder::class);
@@ -29,5 +34,8 @@ class DatabaseSeeder extends Seeder
         $this->call(DepartamentSeeder::class);
         $this->call(UbigeeSeeder::class);
         $this->call(CollaboratorSeeder::class);
+        $this->call(TypeSeeder::class);
+        $this->call(WorkSeeder::class);
+        $this->call(ServiceSeeder::class);
     }
 }

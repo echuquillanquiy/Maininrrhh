@@ -21,10 +21,11 @@ class CreateWorksTable extends Migration
             $table->unsignedBigInteger('type_id');
             $table->string('titulo');
             $table->text('descripcion');
-            $table->enum('estado', [Work::PUBLICADO, Work::TERMINADO])->default(Work::PUBLICADO);
             $table->string('slug');
             $table->date('inicio');
             $table->date('fin');
+            $table->string('image');
+            $table->enum('estado', [Work::PUBLICADO, Work::TERMINADO])->default(Work::PUBLICADO);
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('type_id')->references('id')->on('types')->onDelete('cascade');
