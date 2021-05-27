@@ -7,11 +7,26 @@ use Illuminate\Database\Eloquent\Model;
 
 class Work extends Model
 {
-    protected $guarded = ['id', 'estado'];
     use HasFactory;
+
+    protected $guarded = ['id', 'estado'];
+    protected $withCount = ['applicants'];
 
     const PUBLICADO = 1;
     const TERMINADO = 2;
+
+    //Qeury scoopes
+
+    public function scopeType($query, $type_id){
+        if ($type_id){
+            return $query->where('type_id', $type_id);
+        }
+    }
+
+    public function getRouteKeyName()
+    {
+        return "slug";
+    }
 
     //RELACION UNO A MUCHOS INVERSA
     public function interviewer(){

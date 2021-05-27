@@ -35,6 +35,7 @@ class WorkFactory extends Factory
             'slug' => Str::slug($titulo),
             'inicio' => Carbon::now(),
             'fin' => Carbon::now()->addDays(5),
+            'estado' => $this->faker->randomElement([1, 2]),
             'image' => 'works/' .$this->faker->image('public/storage/works', 640, 400, null, false),
         ];
     }

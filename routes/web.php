@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\WorkController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,3 +20,9 @@ Route::get('/', HomeController::class)->name('home');
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
+
+Route::get('trabajos', [WorkController::class, 'index'])->name('works.index');
+
+Route::get('trabajos/{work}', [WorkController::class, 'show'])->name('works.show');
+
+Route::post('works/{work}/applied', [WorkController::class, 'applied'])->middleware('auth')->name('works.applied');
