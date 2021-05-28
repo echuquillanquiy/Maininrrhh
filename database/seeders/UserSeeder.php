@@ -14,7 +14,7 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        User::create([
+        $user = User::create([
             'name' => 'Raul Eduardo',
             'lastname' => 'Chuquillanqui Yupanqui',
             'dni' => '46589634',
@@ -23,6 +23,8 @@ class UserSeeder extends Seeder
             'email' => 'echuquillanquiy@gmail.com',
             'password' => bcrypt('12345678')
         ]);
+
+        $user->assignRole('Admin');
 
         User::factory(100)->create();
     }
