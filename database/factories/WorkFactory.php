@@ -28,7 +28,7 @@ class WorkFactory extends Factory
         $titulo = $this->faker->sentence();
 
         return [
-            'user_id' => User::all()->random()->id,
+            'user_id' => 1,
             'type_id' => Type::all()->random()->id,
             'titulo' => $this->faker->sentence(),
             'descripcion' => $this->faker->paragraph(),

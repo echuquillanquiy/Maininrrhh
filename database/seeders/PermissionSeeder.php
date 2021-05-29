@@ -61,5 +61,21 @@ class PermissionSeeder extends Seeder
         Permission::create([
             'name' => 'Editar usuarios'
         ]);
+
+        Permission::create([
+            'name' => 'Crear colaborador'
+        ]);
+
+        Permission::create([
+            'name' => 'Listar colaborador'
+        ]);
+
+        Permission::create([
+            'name' => 'Editar colaborador'
+        ]);
+
+        Permission::create([
+            'name' => 'Eliminar colaborador'
+        ]);
     }
 }

@@ -7,7 +7,7 @@ use App\Models\Work;
 use App\Models\Type;
 use Livewire\WithPagination;
 
-class WorkIndex extends Component
+class WorksIndex extends Component
 {
     use WithPagination;
 
@@ -21,7 +21,7 @@ class WorkIndex extends Component
                         ->latest('id')
                         ->paginate(8);
 
-        return view('livewire.work-index', compact('works', 'types'));
+        return view('livewire.works-index', compact('works', 'types'));
     }
 
     public function resetFilters(){

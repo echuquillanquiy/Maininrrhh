@@ -46,4 +46,9 @@ class Collaborator extends Model
     public function trainings(){
         return $this->belongsToMany(Training::class);
     }
+
+    public function image()
+    {
+        return $this->morphOne('App\Models\Image', 'imageable');
+    }
 }

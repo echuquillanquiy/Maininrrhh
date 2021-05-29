@@ -126,6 +126,12 @@ $nav_links = [
                                     </x-jet-dropdown-link>
                                 @endcan
 
+                                @can('Listar colaborador')
+                                    <x-jet-dropdown-link href="{{ route('entrevistador.collaborators.index') }}">
+                                        Colaboradores
+                                    </x-jet-dropdown-link>
+                                @endcan
+
                                 @can('Ver dashboard')
                                     <x-jet-dropdown-link href="{{ route('admin.home') }}">
                                         Administrador
@@ -147,7 +153,7 @@ $nav_links = [
                                     <x-jet-dropdown-link href="{{ route('logout') }}"
                                                          onclick="event.preventDefault();
                                                 this.closest('form').submit();">
-                                        {{ __('Log Out') }}
+                                        Cerrar sesión
                                     </x-jet-dropdown-link>
                                 </form>
                             </x-slot>
@@ -217,6 +223,12 @@ $nav_links = [
                         </x-jet-responsive-nav-link>
                     @endcan
 
+                    @can('Listar colaborador')
+                        <x-jet-responsive-nav-link href="{{ route('entrevistador.collaborators.index') }}" :active="request()->routeIs('entrevistador.collaborators.index')">
+                            Colaboradores
+                        </x-jet-responsive-nav-link>
+                    @endcan
+
                     @can('Ver dashboard')
                         <x-jet-responsive-nav-link href="{{ route('admin.home') }}" :active="request()->routeIs('admin.home')">
                             Administrador
@@ -236,7 +248,7 @@ $nav_links = [
                         <x-jet-responsive-nav-link href="{{ route('logout') }}"
                                                    onclick="event.preventDefault();
                                     this.closest('form').submit();">
-                            {{ __('Log Out') }}
+                            Cerrar sesión
                         </x-jet-responsive-nav-link>
                     </form>
 
