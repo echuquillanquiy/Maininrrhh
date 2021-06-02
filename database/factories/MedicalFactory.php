@@ -25,9 +25,9 @@ class MedicalFactory extends Factory
         return [
             'client_id' => Client::all()->random()->id,
             'peso' => $this->faker->numberBetween(40,150),
-            'talla' => $this->faker->randomNumber(2),
-            'imc' => $this->faker->randomNumber(3),
-            'diagnutricion' => $this->faker->randomElement(['SOBREPES', 'OBESIDAD', 'NORMOPESO', 'OBESIDAD TIPO II', 'OBESIDAD TIPO III', 'OBESIDAD MORBIDA']),
+            'talla' => $this->faker->randomNumber(1, 1.99),
+            'imc' => $this->faker->randomFloat(2, 20,40),
+            'diagnutricion' => $this->faker->randomElement(['SOBREPESO', 'OBESIDAD', 'NORMOPESO', 'OBESIDAD TIPO II', 'OBESIDAD TIPO III', 'OBESIDAD MORBIDA']),
             'fechaexmedico' => $this->faker->date('Y-m-d'),
             'levantamientoobs' => $this->faker->date('Y-m-d'),
             'centromedico' => $this->faker->word,

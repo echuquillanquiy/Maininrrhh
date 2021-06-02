@@ -10,7 +10,7 @@ class Training extends Model
     protected $guarded = ['id'];
     use HasFactory;
 
-    public function collaborators(){
-        return $this->belongsToMany(Collaborator::class);
+    public function collaborator(){
+        return $this->belongsTo(Collaborator::class);
     }
 }

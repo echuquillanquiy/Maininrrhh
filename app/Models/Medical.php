@@ -12,7 +12,7 @@ class Medical extends Model
 
     //RELACION UNO A UNO
     public function collaborator(){
-        return $this->hasOne(Collaborator::class);
+        return $this->belongsTo(Collaborator::class);
     }
 
     //RELACION UNO A MUCHOS INVERSA

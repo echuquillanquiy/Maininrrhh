@@ -1,8 +1,8 @@
 <div class="lg:max-w-8xl mx-auto px-4 py-6">
     <x-table-responsive>
         <div class="px-6 py-4 flex">
-            <input wire:keydown="limpiar_page" wire:model="search" type="text" class="form-input shadow-sm rounded-lg" placeholder="Ingrese su busqueda...">
-            <a class="btn btn-danger" href="">Nuevo Colaborador</a>
+            <input wire:keydown="limpiar_page" wire:model="search" type="text" class="form-input shadow-sm rounded-lg flex-1" placeholder="Ingrese su busqueda...">
+            <a class="btn btn-danger ml-2" href="{{ route('entrevistador.collaborators.create') }}">Nuevo Colaborador</a>
         </div>
         @if($collaborators->count())
             <table class="min-w-full divide-y divide-gray-200">
@@ -35,7 +35,11 @@
                             <td class="px-6 py-4 whitespace-nowrap">
                                 <div class="flex items-center">
                                     <div class="flex-shrink-0 h-10 w-10">
-                                        <img class="h-10 w-10 rounded-full" src="{{ Storage::url($collaborator->image->url) }}" alt="">
+                                        @isset($collaborator->image)
+                                            <img class="h-10 w-10 rounded-full object-cover object-center" src="{{ Storage::url($collaborator->image->url) }}" alt="">
+                                        @else
+                                            <img class="h-10 w-10 rounded-full  object-cover object-center" src="https://cdn.pixabay.com/photo/2016/04/25/07/15/man-1351317_960_720.png" alt="">
+                                        @endisset
                                     </div>
                                     <div class="ml-4">
                                         <div class="text-sm font-medium text-gray-900">

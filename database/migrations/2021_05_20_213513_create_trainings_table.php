@@ -17,10 +17,11 @@ class CreateTrainingsTable extends Migration
             $table->id();
 
             $table->unsignedBigInteger('collaborator_id');
-            $table->foreign('collaborator_id')->references('id')->on('collaborators')->onDelete('cascade');
-
+            $table->string('empresa');
             $table->text('descripcion');
             $table->date('fechacap');
+
+            $table->foreign('collaborator_id')->references('id')->on('collaborators')->onDelete('cascade');
 
             $table->timestamps();
         });

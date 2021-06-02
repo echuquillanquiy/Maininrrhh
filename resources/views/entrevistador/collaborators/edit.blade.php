@@ -1,28 +1,34 @@
-<x-app-layout>
-    <div class="container py-8 grid grid-cols-5">
-        <aside>
-            <h1 class="font-bold text-lg mb-4">Edición de Colaborador</h1>
+<x-entrevistador-layout>
 
-            <ul>
-                <li class="leading-7 mb-1 border-l-4 border-indigo-400 pl-2">
-                    <a href="">Datos Personales</a>
-                </li>
-                <li class="leading-7 mb-1 border-l-4 border-transparent pl-2">
-                    <a href="">Datos Generales</a>
-                </li>
-                <li class="leading-7 mb-1 border-l-4 border-transparent pl-2">
-                    <a href="">Datos Médicos</a>
-                </li>
-                <li class="leading-7 mb-1 border-l-4 border-transparent pl-2">
-                    <a href="">Capacitaciones</a>
-                </li>
-            </ul>
-        </aside>
+    <x-slot name="collaborator">
+        {{ $collaborator->id }}
+    </x-slot>
 
-        <div class="col-span-4 card">
-            <div class="card-body">
+    <h1 class="text-2xl font-bold">Información del Colaborador</h1>
+    <hr class="mt-2 mb-6">
 
-            </div>
-        </div>
+    {!! Form::model($collaborator, ['route' => ['entrevistador.collaborators.update', $collaborator], 'method' => 'put', 'files' => true]) !!}
+
+    @include('entrevistador.collaborators.partials.form')
+
+    <div class="flex justify-end">
+        {!! Form::submit('Actualizar información', ['class' => 'btn btn-primary']) !!}
     </div>
-</x-app-layout>
+
+    {!! Form::close() !!}
+
+    <script>
+        document.getElementById("file").addEventListener('change', cambiarImagen);
+
+        function cambiarImagen(event){
+            var file = event.target.files[0];
+
+            var reader = new FileReader();
+            reader.onload = (event) => {
+                document.getElementById("picture").setAttribute('src', event.target.result);
+            };
+
+            reader.readAsDataURL(file);
+        }
+    </script>
+</x-entrevistador-layout>

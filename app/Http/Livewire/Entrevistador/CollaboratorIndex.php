@@ -15,6 +15,7 @@ class CollaboratorIndex extends Component
     public function render()
     {
         $collaborators = Collaborator::where('user_id', auth()->user()->id)
+                ->latest('id')
                 ->where('nombres', 'LIKE', '%' . $this->search . '%')
                 ->orWhere('apellidos', 'LIKE', '%' . $this->search . '%')
                 ->orWhere('ndocumento', 'LIKE', '%' . $this->search . '%')

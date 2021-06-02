@@ -22,8 +22,8 @@ class CreateMedicalsTable extends Migration
             $table->foreign('client_id')->references('id')->on('clients')->onDelete('cascade');
 
             $table->integer('peso');
-            $table->integer('talla');
-            $table->integer('imc')->nullable();
+            $table->float('talla');
+            $table->float('imc')->nullable();
             $table->string('diagnutricion')->nullable();
             $table->string('fechaexmedico')->nullable();
             $table->string('levantamientoobs')->nullable();

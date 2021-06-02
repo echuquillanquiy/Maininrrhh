@@ -14,17 +14,6 @@ class Collaborator extends Model
     const ACEPTADO = 1;
     const RECHAZADO = 2;
 
-
-    // RELACION UNO A UNO
-
-    public function datogeneral(){
-        return $this->hasOne(DatoGeneral::class);
-    }
-
-    public function medical(){
-        return $this->hasOne(Medical::class);
-    }
-
     //RELACION UNO A MUCHOS INVERSA
     public function departament(){
         return $this->belongsTo(Departament::class);
@@ -44,7 +33,15 @@ class Collaborator extends Model
 
     //RELACION MUCHOS A MUCHOS
     public function trainings(){
-        return $this->belongsToMany(Training::class);
+        return $this->hasMany(Training::class);
+    }
+
+    public function datogenerals(){
+        return $this->hasMany(DatoGeneral::class);
+    }
+
+    public function medicals(){
+        return $this->hasMany(Medical::class);
     }
 
     public function image()

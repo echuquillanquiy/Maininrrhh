@@ -34,11 +34,11 @@ class CollaboratorSeeder extends Seeder
                'collaborator_id' => $collaborator->id,
             ]);
 
-            Training::factory(3)->create([
+            Medical::factory(1)->create([
                 'collaborator_id' => $collaborator->id,
             ]);
 
-            Medical::factory(1)->create([
+            Training::factory(5)->create([
                 'collaborator_id' => $collaborator->id,
             ]);
         }

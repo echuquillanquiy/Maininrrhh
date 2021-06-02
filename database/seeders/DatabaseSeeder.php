@@ -17,11 +17,11 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        Storage::deleteDirectory('colaboradores');
+        Storage::deleteDirectory('collaborators');
         Storage::deleteDirectory('works');
         Storage::deleteDirectory('services');
 
-        Storage::makeDirectory('colaboradores');
+        Storage::makeDirectory('collaborators');
         Storage::makeDirectory('works');
         Storage::makeDirectory('services');
 
