@@ -116,24 +116,31 @@
 </div>
 
 <div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
+    @isset($collaborator)
+        <div class="mb-4">
+            {!! Form::label('departament_id', 'Departamento') !!}
+            {!! Form::select('departament_id', $departaments, null, ['class' => 'form-input w-full mt-1 rounded-lg', 'id' => 'select-departament']) !!}
+        </div>
+    @else
+        <div class="mb-4">
+            {!! Form::label('departament_id', 'Departamento') !!}
+            {!! Form::select('departament_id', $departaments, null, ['class' => 'form-input w-full mt-1 rounded-lg', 'id' => 'select-departament']) !!}
+        </div>
+    @endisset
+
     <div class="mb-4">
-        {!! Form::label('departament_id', 'Departamento') !!}
-        {!! Form::select('departament_id', $departaments, null, ['class' => 'form-input w-full mt-1 rounded-lg']) !!}
+        {!! Form::label('province_id', 'Provincias') !!}
+        {!! Form::select('province_id', $provinces, null, ['class' => 'form-input w-full mt-1 rounded-lg', 'id' => 'select-province']) !!}
     </div>
 
     <div class="mb-4">
-        {!! Form::label('province_id', 'Provincia') !!}
-        {!! Form::select('province_id', $provinces, null, ['class' => 'form-input w-full mt-1 rounded-lg']) !!}
-    </div>
-
-    <div class="mb-4">
-        {!! Form::label('district_id', 'Distrito') !!}
-        {!! Form::select('district_id', $districts, null, ['class' => 'form-input w-full mt-1 rounded-lg']) !!}
+        {!! Form::label('district_id', 'Distritos') !!}
+        {!! Form::select('district_id', $districts, null, ['class' => 'form-input w-full mt-1 rounded-lg', 'id' => 'select-district']) !!}
     </div>
 
     <div class="mb-4">
         {!! Form::label('ubigee_id', 'Ubigeo') !!}
-        {!! Form::select('ubigee_id', $districts, null, ['class' => 'form-input w-full mt-1 rounded-lg']) !!}
+        {!! Form::select('ubigee_id', $ubigees, null, ['class' => 'form-input w-full mt-1 rounded-lg']) !!}
     </div>
 </div>
 

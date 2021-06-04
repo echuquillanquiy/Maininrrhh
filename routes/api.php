@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\Api\DepartamentController;
+use App\Http\Controllers\Api\DistrictController;
+use App\Http\Controllers\Api\ProvinceController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -17,3 +20,7 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('/departaments', [DepartamentController::class, 'getDepartaments']);
+Route::get('/departaments/{id}/provinces', [ProvinceController::class, 'getProvincexDep']);
+Route::get('/provinces/{id}/districts', [DistrictController::class, 'getDistritoxProv']);

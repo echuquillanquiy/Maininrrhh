@@ -40,7 +40,7 @@ class CollaboratorController extends Controller
         $departaments = Departament::pluck('name', 'id');
         $provinces = Province::pluck('name', 'id');
         $districts = District::pluck('name', 'id');
-        $ubigees = Ubigee::all('distrito', 'id');
+        $ubigees = Ubigee::pluck('distrito', 'id');
 
         return view('entrevistador.collaborators.create', compact('departaments', 'provinces', 'districts', 'ubigees'));
     }
@@ -117,7 +117,7 @@ class CollaboratorController extends Controller
         $departaments = Departament::pluck('name', 'id');
         $provinces = Province::pluck('name', 'id');
         $districts = District::pluck('name', 'id');
-        $ubigees = Ubigee::all('distrito', 'id');
+        $ubigees = Ubigee::pluck('distrito', 'id');
 
         return view('entrevistador.collaborators.edit', compact('collaborator', 'departaments', 'provinces', 'districts', 'ubigees'));
     }

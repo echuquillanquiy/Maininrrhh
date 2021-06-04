@@ -290,8 +290,7 @@
                 <div class="card-body">
                     <h1 class="text-xl font-bold mb-4">Agregar Dato General</h1>
 
-                    <div class="grid grid-cols-1 lg:grid-cols-4 gap-4">
-
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                         <div class="mt-1">
                             <label class="w-32">Categoría: </label>
                             <select wire:model="category_id" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
@@ -340,10 +339,13 @@
                             <span class="text-xs text-red-500">{{ $message }}</span>
                             @enderror
                         </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
 
                         <div class="mt-2">
                             <label class="w-32">¿Cuenta con respirador?</label>
-                            <input wire:model="respirador" type="text" class="form-input w-full rounded-lg">
+                            <input wire:model="respirador" type="text" class="form-input w-full rounded-lg xs:mt-2">
                             @error('respirador')
                             <span class="text-xs text-red-500">{{ $message }}</span>
                             @enderror
@@ -375,8 +377,9 @@
                             <span class="text-xs text-red-500">{{ $message }}</span>
                             @enderror
                         </div>
+                    </div>
 
-
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                         <div class="mt-2">
                             <label class="w-32">Talla de camisa</label>
                             <input wire:model="tallacamisa" type="text" class="form-input w-full rounded-lg">
@@ -409,40 +412,42 @@
                             <span class="text-xs text-red-500">{{ $message }}</span>
                             @enderror
                         </div>
+                    </div>
 
-                        <div class="mt-2 col-span-2">
-                            <label class="w-32">Especialidad</label>
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                        <div class="mt-2">
+                            <label>Especialidad</label>
                             <input wire:model="especialidad" type="text" class="form-input w-full rounded-lg">
                             @error('especialidad')
                             <span class="text-xs text-red-500">{{ $message }}</span>
                             @enderror
                         </div>
 
-                        <div class="mt-2 col-span-2">
-                            <label class="w-32">Donde se entero de la entrevista</label>
+                        <div class="mt-2">
+                            <label>Donde se entero de la entrevista</label>
                             <input wire:model="medio" type="text" class="form-input w-full rounded-lg">
                             @error('medio')
                             <span class="text-xs text-red-500">{{ $message }}</span>
                             @enderror
                         </div>
+                    </div>
 
-                        <div class="mt-2 col-span-2">
-                            <label class="w-32">Observaciones</label>
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                        <div class="mt-2">
+                            <label>Observaciones</label>
                             <textarea wire:model="observaciones" type="text" class="form-input w-full rounded-lg" rows="3"></textarea>
                             @error('observaciones')
                             <span class="text-xs text-red-500">{{ $message }}</span>
                             @enderror
                         </div>
 
-
-                        <div class="mt-2 col-span-2">
-                            <label class="w-32">Comentarios</label>
+                        <div class="mt-2">
+                            <label>Comentarios</label>
                             <textarea wire:model="comentarios" type="text" class="form-input w-full rounded-lg" rows="3"></textarea>
                             @error('comentarios')
                             <span class="text-xs text-red-500">{{ $message }}</span>
                             @enderror
                         </div>
-
                     </div>
 
                     <div class="flex justify-end cursor-pointer">
